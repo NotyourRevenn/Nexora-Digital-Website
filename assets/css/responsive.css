@@ -1,0 +1,880 @@
+/* ==========================================================================
+   Nexora Digital - Responsive Media Queries
+   Flawless Mobile-First & Cross-Device Optimization (320px to 4K Ultra-Wide)
+   Zero Horizontal Overflow Guaranteed on All Phone Screens
+   ========================================================================== */
+
+/* Universal Mobile Overflow Protection */
+html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    position: relative;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Large Tablets & Laptops (Max Width: 1199px)
+   ========================================================================== */
+@media screen and (max-width: 1199px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .hero-grid {
+        gap: 2.5rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem;
+    }
+    
+    .pricing-grid {
+        gap: 1.5rem;
+    }
+
+    .single-price-plan.featured {
+        transform: scale(1.02);
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+    }
+}
+
+/* ==========================================================================
+   Tablets Portrait & Smaller Laptops (Max Width: 991px)
+   ========================================================================== */
+@media screen and (max-width: 991px) {
+    .section {
+        padding: 4.5rem 0;
+    }
+    
+    .ptb_150, .ptb_120 {
+        padding: 4.5rem 0;
+    }
+
+    /* Mobile Header & Toggle */
+    .site-header {
+        padding: 0.85rem 0;
+    }
+
+    .mobile-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 42px;
+        height: 42px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 10px;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+    }
+
+    .hamburger-line {
+        display: block;
+        width: 22px;
+        height: 2px;
+        margin: 2.5px auto;
+        background: var(--text-white);
+        transition: var(--transition);
+        border-radius: 2px;
+    }
+
+    /* Mobile Slide-Out Drawer Navigation */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 290px;
+        max-width: 82vw;
+        height: 100vh;
+        background: rgba(6, 5, 47, 0.98);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5.5rem 2rem 2.5rem;
+        gap: 1.25rem;
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.7);
+        transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .mobile-drawer-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 1rem;
+        margin-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .mobile-drawer-title {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 1.15rem;
+        color: var(--text-white);
+    }
+
+    .mobile-drawer-close {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        color: #fff;
+        font-size: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .mobile-drawer-close:hover {
+        background: rgba(255, 0, 127, 0.3);
+        border-color: var(--brand-magenta);
+    }
+
+    .nav-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 999;
+    }
+
+    .nav-menu-backdrop.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+        width: 100%;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .header-actions .btn {
+        display: none !important;
+    }
+
+    .nav-menu .mobile-cta-wrap {
+        display: block !important;
+        width: 100%;
+        margin-top: 1rem;
+        padding-top: 1rem;
+    }
+
+    .nav-menu .mobile-cta-wrap .btn {
+        width: 100%;
+    }
+
+    /* Animated Hamburger to X */
+    .mobile-toggle.active .hamburger-line:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .mobile-toggle.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-toggle.active .hamburger-line:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Hero Section Responsive */
+    .welcome-area {
+        padding-top: 6.5rem;
+        padding-bottom: 3.5rem;
+        min-height: auto;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .welcome-intro {
+        text-align: center;
+    }
+
+    .welcome-intro p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-grid .btn-group {
+        justify-content: center;
+    }
+
+    .hero-stats-row {
+        max-width: 480px;
+        margin: 2rem auto 0;
+    }
+
+    .hero-visual-card {
+        transform: none !important;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .hero-visual-card:hover {
+        transform: translateY(-4px) !important;
+    }
+
+    .floating-chip {
+        display: none !important; /* Hide floating chips to avoid pushing screen width */
+    }
+
+    /* Content Area (About) */
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    /* Services Grid */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Pricing Section */
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 460px;
+        margin: 0 auto;
+    }
+
+    .single-price-plan.featured {
+        transform: none !important;
+    }
+
+    .single-price-plan.featured:hover {
+        transform: translateY(-6px) !important;
+    }
+
+    /* Reviews Section */
+    .review-grid {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+        margin: 0 auto;
+    }
+
+    /* Contact Section */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .contact-info-list {
+        max-width: 500px;
+        margin: 1.5rem auto 0;
+    }
+
+    .contact-form-box {
+        max-width: 560px;
+        margin: 0 auto;
+    }
+}
+
+/* ==========================================================================
+   Mobile Phones (Max Width: 767px) - Core Phone View Optimization
+   ========================================================================== */
+@media screen and (max-width: 767px) {
+    .container {
+        padding: 0 1rem !important;
+        max-width: 100% !important;
+    }
+
+    .section {
+        padding: 3.5rem 0 !important;
+    }
+
+    .section-heading {
+        margin-bottom: 2rem !important;
+    }
+
+    .section-heading h2 {
+        font-size: 1.65rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .section-heading p {
+        font-size: 0.9rem !important;
+        line-height: 1.6 !important;
+    }
+
+    .section-tag {
+        font-size: 0.72rem !important;
+        padding: 0.25rem 0.8rem !important;
+    }
+
+    /* Brand Header on Phones */
+    .navbar-brand {
+        gap: 0.55rem !important;
+    }
+
+    .brand-icon {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .brand-name {
+        font-size: 1.05rem !important;
+    }
+
+    .brand-tagline {
+        font-size: 0.55rem !important;
+        letter-spacing: 0.08em !important;
+    }
+
+    /* Hero on Phones */
+    .welcome-area {
+        padding-top: 5.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+
+    .hero-badge {
+        font-size: 0.75rem !important;
+        padding: 0.35rem 0.85rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .welcome-intro h1 {
+        font-size: 1.95rem !important;
+        line-height: 1.25 !important;
+    }
+
+    .welcome-intro h1 .lead-title {
+        font-size: 0.55em !important;
+    }
+
+    .welcome-intro p {
+        font-size: 0.92rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .btn-group {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 0.75rem !important;
+    }
+
+    .btn-group .btn {
+        width: 100% !important;
+        padding: 0.75rem 1.25rem !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Hero Stats Row */
+    .hero-stats-row {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.5rem !important;
+        padding-top: 1.25rem !important;
+        margin-top: 1.75rem !important;
+        max-width: 100% !important;
+    }
+
+    .hero-stat h4 {
+        font-size: 1.25rem !important;
+        justify-content: center !important;
+    }
+
+    .hero-stat p {
+        font-size: 0.65rem !important;
+        text-align: center !important;
+    }
+
+    /* Hero Visual Card */
+    .hero-visual-card {
+        padding: 1.35rem 1rem !important;
+        border-radius: 18px !important;
+        max-width: 100% !important;
+    }
+
+    .hero-logo-img {
+        width: 42px !important;
+        height: 42px !important;
+    }
+
+    .hero-logo-center h4 {
+        font-size: 0.95rem !important;
+    }
+
+    .live-indicator {
+        font-size: 0.68rem !important;
+        padding: 0.2rem 0.55rem !important;
+    }
+
+    .hero-metrics-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.65rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .metric-box {
+        padding: 0.85rem 0.75rem !important;
+        border-radius: 12px !important;
+    }
+
+    .metric-label {
+        font-size: 0.68rem !important;
+    }
+
+    .metric-val {
+        font-size: 1.2rem !important;
+    }
+
+    .metric-gain {
+        font-size: 0.65rem !important;
+        padding: 0.1rem 0.35rem !important;
+    }
+
+    /* Platforms Strip in Hero: 2x2 Grid so pills never overflow! */
+    .ad-platforms-strip {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.5rem !important;
+        padding: 0.65rem 0.75rem !important;
+    }
+
+    .platform-pill {
+        font-size: 0.72rem !important;
+        justify-content: center !important;
+        white-space: nowrap !important;
+    }
+
+    /* Client / Partner Marquee */
+    .client-marquee-area {
+        padding: 1.75rem 0 !important;
+    }
+
+    .marquee-grid {
+        gap: 1rem 1.5rem !important;
+    }
+
+    .partner-item {
+        font-size: 0.85rem !important;
+    }
+
+    .partner-item i {
+        font-size: 1.15rem !important;
+    }
+
+    /* Who We Are & Growth Dashboard Panel */
+    .growth-dashboard-panel {
+        padding: 1.5rem 1rem !important;
+        border-radius: 18px !important;
+    }
+
+    .growth-stat-cards {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.65rem !important;
+    }
+
+    .growth-stat-card {
+        padding: 0.85rem 0.5rem !important;
+        border-radius: 12px !important;
+    }
+
+    .growth-stat-card .stat-val {
+        font-size: 1.2rem !important;
+        word-break: break-word !important;
+    }
+
+    .growth-stat-card .stat-label {
+        font-size: 0.7rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .single-content-item {
+        gap: 0.85rem !important;
+    }
+
+    .content-icon {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 0.95rem !important;
+    }
+
+    .content-item-text h4 {
+        font-size: 1rem !important;
+    }
+
+    .content-item-text p {
+        font-size: 0.85rem !important;
+    }
+
+    /* Services Grid: Full-Width 1-Column */
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+
+    .single-service {
+        padding: 1.5rem 1.25rem !important;
+        border-radius: 16px !important;
+    }
+
+    .single-service h3 {
+        font-size: 1.15rem !important;
+    }
+
+    .single-service p {
+        font-size: 0.86rem !important;
+        margin-bottom: 1.15rem !important;
+    }
+
+    .service-icon {
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 1.25rem !important;
+        border-radius: 12px !important;
+    }
+
+    .service-num {
+        font-size: 1.15rem !important;
+    }
+
+    .addon-services-box {
+        padding: 1.5rem 1rem !important;
+        margin-top: 2rem !important;
+        border-radius: 16px !important;
+    }
+
+    .addon-header h3 {
+        font-size: 1.2rem !important;
+    }
+
+    .addon-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.65rem !important;
+    }
+
+    .addon-item {
+        padding: 0.75rem 0.85rem !important;
+        font-size: 0.84rem !important;
+    }
+
+    /* Process Methodology: 1-Column */
+    .process-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+
+    .process-card {
+        padding: 1.5rem 1.25rem !important;
+        border-radius: 16px !important;
+    }
+
+    .process-step-num {
+        font-size: 2.25rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    .process-card h3 {
+        font-size: 1.1rem !important;
+    }
+
+    .process-card p {
+        font-size: 0.86rem !important;
+    }
+
+    /* Pricing Section */
+    .pricing-toggle-wrap {
+        flex-wrap: wrap !important;
+        gap: 0.65rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .single-price-plan {
+        padding: 2rem 1.25rem !important;
+        border-radius: 18px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .plan-title {
+        font-size: 1.3rem !important;
+    }
+
+    .plan-desc {
+        font-size: 0.84rem !important;
+        min-height: auto !important;
+    }
+
+    .plan-price {
+        font-size: 2.25rem !important;
+    }
+
+    .blurred-price-wrapper {
+        min-width: 0 !important;
+        width: 100% !important;
+        max-width: 260px !important;
+        padding: 0.55rem 0.85rem !important;
+    }
+
+    .price-unlock-badge {
+        font-size: 0.72rem !important;
+        padding: 0.35rem 0.75rem !important;
+    }
+
+    .feature-item {
+        font-size: 0.84rem !important;
+        gap: 0.55rem !important;
+    }
+
+    .custom-pricing-banner {
+        padding: 1.5rem 1rem !important;
+        border-radius: 16px !important;
+        text-align: center !important;
+        flex-direction: column !important;
+        gap: 1.15rem !important;
+    }
+
+    .custom-pricing-banner .btn {
+        width: 100% !important;
+    }
+
+    /* Reviews Section */
+    .single-review {
+        padding: 1.5rem 1.25rem !important;
+        border-radius: 16px !important;
+    }
+
+    .review-text {
+        font-size: 0.88rem !important;
+        line-height: 1.6 !important;
+    }
+
+    .client-avatar {
+        width: 42px !important;
+        height: 42px !important;
+    }
+
+    .client-info h4 {
+        font-size: 0.92rem !important;
+    }
+
+    /* FAQ Section */
+    .faq-question {
+        padding: 1.15rem 1.25rem !important;
+    }
+
+    .faq-question h3 {
+        font-size: 0.95rem !important;
+        line-height: 1.4 !important;
+    }
+
+    .faq-answer {
+        padding: 0 1.25rem !important;
+    }
+
+    .faq-answer p {
+        font-size: 0.86rem !important;
+        padding-bottom: 1.15rem !important;
+    }
+
+    /* Contact Cards & Form */
+    .contact-info-card {
+        padding: 1.15rem 1rem !important;
+        border-radius: 14px !important;
+        gap: 0.85rem !important;
+    }
+
+    .contact-card-icon {
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 1.15rem !important;
+        border-radius: 10px !important;
+    }
+
+    .contact-card-text span {
+        font-size: 0.7rem !important;
+    }
+
+    .contact-card-text a,
+    .contact-card-text p {
+        font-size: 0.92rem !important;
+        word-break: break-all !important; /* Prevents long emails like nexoradigitalofficial@gmail.com from overflowing! */
+    }
+
+    .contact-form-box {
+        padding: 1.65rem 1.15rem !important;
+        border-radius: 18px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .form-title {
+        font-size: 1.25rem !important;
+    }
+
+    .form-subtitle {
+        font-size: 0.84rem !important;
+        margin-bottom: 1.35rem !important;
+    }
+
+    .form-group-row {
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+    }
+
+    .form-control {
+        font-size: 0.88rem !important;
+        padding: 0.75rem 0.95rem !important;
+    }
+
+    /* CTA Banner Box */
+    .cta-box {
+        padding: 2.25rem 1rem !important;
+        border-radius: 18px !important;
+    }
+
+    .cta-box h2 {
+        font-size: 1.5rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .cta-box p {
+        font-size: 0.88rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 1.75rem !important;
+    }
+
+    .cta-actions {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 0.75rem !important;
+    }
+
+    .cta-actions .btn {
+        width: 100% !important;
+    }
+
+    /* Automated Unlock Pricing Modal on Phone */
+    .pricing-modal-overlay {
+        padding: 0.65rem !important;
+    }
+
+    .pricing-modal-dialog {
+        padding: 1.65rem 1.15rem !important;
+        border-radius: 18px !important;
+        max-height: 94vh !important;
+    }
+
+    .modal-tag {
+        font-size: 0.7rem !important;
+    }
+
+    .pricing-modal-dialog h3 {
+        font-size: 1.2rem !important;
+    }
+
+    .modal-contact-strip {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+        padding: 0.75rem !important;
+    }
+
+    .modal-contact-pill {
+        flex: 1 1 100% !important;
+        width: 100% !important;
+        justify-content: center !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* Footer on Phones */
+    .site-footer {
+        padding: 3.5rem 0 1.5rem !important;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        margin-bottom: 2.5rem !important;
+    }
+
+    .footer-brand-wrap p {
+        font-size: 0.86rem !important;
+        max-width: 100% !important;
+    }
+
+    .footer-bottom {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 0.65rem !important;
+        font-size: 0.78rem !important;
+    }
+
+    /* Floating WhatsApp Button on Phones */
+    .whatsapp-floating-btn {
+        bottom: 18px !important;
+        right: 18px !important;
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.5rem !important;
+    }
+}
+
+/* ==========================================================================
+   Ultra-Compact Smart Phones (Max Width: 380px - iPhone SE, Galaxy A0x)
+   ========================================================================== */
+@media screen and (max-width: 380px) {
+    .welcome-intro h1 {
+        font-size: 1.75rem !important;
+    }
+
+    .hero-stats-row {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+    }
+
+    .hero-stat {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 0.5rem 0.85rem;
+        border-radius: 8px;
+    }
+
+    .hero-stat h4 {
+        margin-bottom: 0 !important;
+    }
+
+    .hero-metrics-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .ad-platforms-strip {
+        grid-template-columns: 1fr !important;
+    }
+}
